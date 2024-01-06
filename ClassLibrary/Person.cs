@@ -39,15 +39,27 @@ namespace ClassLibrary
         }
         public void SetFirstName(string firstName)
         {
-            FirstName = firstName;
+            if (firstName.Length < 1)
+            {
+                throw new Exception("First name can not be empty!");
+            }
+            else FirstName = firstName;
         }
         public void SetLastName(string lastName)
         {
-            LastName = lastName;
+            if (lastName.Length < 1)
+            {
+                throw new Exception("Last name can not be empty!");
+            }
+            else LastName = lastName;
         }
         public void SetDateOfBirth(DateTime dateOfBirth)
         {
-            DateOfBirth = dateOfBirth;
+            if (dateOfBirth > DateTime.Now)
+            {
+                throw new Exception("Date of birth can not be in the future!");
+            }
+            else DateOfBirth = dateOfBirth;
         }
         public virtual string ShowInfo()
         { 

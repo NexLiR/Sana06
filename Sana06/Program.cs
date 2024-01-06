@@ -7,5 +7,9 @@ static class Program
         DateTime date = new DateTime(2006, 9, 27);
         Person person = new Person("Oleg", "Redka", date);
         Console.WriteLine(person.ShowInfo());
+        Console.WriteLine();
+        ZNO zno = new ZNO("Math", 152, "Ukrainian", 157, "History", 163);
+        Applicant applicant = new Applicant("Oleg", "Redka", date, zno, 9.7, "School 28");
+        Console.WriteLine(applicant.ShowInfo());
     }
 }
