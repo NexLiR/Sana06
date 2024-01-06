@@ -17,6 +17,10 @@ static class Program
         Console.WriteLine();
         DateTime date1 = new DateTime(1976, 5, 14);
         Teacher teacher = new Teacher("Oleksii", "Chizhmotrya", date1, "Senior Lecturer", "Department of Software Engineering", "Zhytomyr Polytechnic State University");
-        Console.WriteLine(teacher.ShowInfo());    
+        Console.WriteLine(teacher.ShowInfo());
+        Console.WriteLine();
+        DateTime date2 = new DateTime(2024, 1, 6);
+        LibraryUser libraryUser = new LibraryUser("Oleg", "Redka", date, 4863753, date2, 24.50f);
+        Console.WriteLine(libraryUser.ShowInfo());
     }
 }
