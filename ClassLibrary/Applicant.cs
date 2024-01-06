@@ -6,27 +6,27 @@ namespace ClassLibrary
     {
         protected ZNO SertificateZNO;
         protected double AverageScoreInEducationDocument;
-        protected string NameOfTheEducationalInstitution;
+        protected string NameOfTheFirstEducationalInstitution;
         
         public Applicant() : base()
         {
             SertificateZNO = new ZNO();
             AverageScoreInEducationDocument = 0;
-            NameOfTheEducationalInstitution = "Unknown";
+            NameOfTheFirstEducationalInstitution = "Unknown";
         }
         public Applicant(string firstName, string lastName, DateTime dateOfBirth, ZNO sertificateZNO, double avgScoreInEducationDocument, string nameOfTheEduacationalInstitution)
         : base(firstName, lastName, dateOfBirth)
         { 
             SertificateZNO = sertificateZNO;
             AverageScoreInEducationDocument = avgScoreInEducationDocument;
-            NameOfTheEducationalInstitution = nameOfTheEduacationalInstitution;
+            NameOfTheFirstEducationalInstitution = nameOfTheEduacationalInstitution;
         }
         public Applicant(Applicant applicant)
             : base(applicant.FirstName, applicant.LastName, applicant.DateOfBirth)
         {
             SertificateZNO = applicant.SertificateZNO;
             AverageScoreInEducationDocument = applicant.AverageScoreInEducationDocument;
-            NameOfTheEducationalInstitution = applicant.NameOfTheEducationalInstitution;
+            NameOfTheFirstEducationalInstitution = applicant.NameOfTheFirstEducationalInstitution;
         }
         public ZNO GetSertificateZNO()
         {
@@ -38,7 +38,7 @@ namespace ClassLibrary
         }
         public string GetNameOfTheEducationalInstitution()
         {
-            return NameOfTheEducationalInstitution;
+            return NameOfTheFirstEducationalInstitution;
         }
         public void SetSertificateZNO(ZNO sertificateZNO)
         {
@@ -50,13 +50,13 @@ namespace ClassLibrary
         }
         public void SetNameOfTheEducationalInstitution(string nameOfTheEducationalInstitution)
         {
-            NameOfTheEducationalInstitution = nameOfTheEducationalInstitution;
+            NameOfTheFirstEducationalInstitution = nameOfTheEducationalInstitution;
         }
         public override string ShowInfo()
         {
             return base.ShowInfo() + "\n" + $"ZNO sertificate:\n{SertificateZNO.FirstSubjectName} - {SertificateZNO.FirstSubjectMark}\n{SertificateZNO.SecondSubjectName} - {SertificateZNO.SecondSubjectMark}\n{SertificateZNO.ThirdSubjectName} - {SertificateZNO.ThirdSubjectMark}" +
                 $"\nAverage score in educational document: {AverageScoreInEducationDocument}" +
-                $"\nName of the educational institution: {NameOfTheEducationalInstitution}";
+                $"\nName of the educational institution: {NameOfTheFirstEducationalInstitution}";
         }
     }
 }

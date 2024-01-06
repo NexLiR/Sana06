@@ -14,5 +14,9 @@ static class Program
         Console.WriteLine();
         Student student = new Student("Oleg", "Redka", date, zno, 9.7, "School 28", 1, "IPZ-23-2", "FICT", "ZPSU");
         Console.WriteLine(student.ShowInfo());
+        Console.WriteLine();
+        DateTime date1 = new DateTime(1976, 5, 14);
+        Teacher teacher = new Teacher("Oleksii", "Chizhmotrya", date1, "Senior Lecturer", "Department of Software Engineering", "Zhytomyr Polytechnic State University");
+        Console.WriteLine(teacher.ShowInfo());    
     }
 }

@@ -25,14 +25,14 @@ namespace ClassLibrary
             University = university;
         }
         public Student(Student student)
-            : base(student.FirstName, student.LastName, student.DateOfBirth, student.SertificateZNO, student.AverageScoreInEducationDocument, student.NameOfTheEducationalInstitution)
+            : base(student.FirstName, student.LastName, student.DateOfBirth, student.SertificateZNO, student.AverageScoreInEducationDocument, student.NameOfTheFirstEducationalInstitution)
         {
             Course = student.Course;
             Group = student.Group;
             Faculty = student.Faculty;
             University = student.University;
         }
-
+        
         public override string ShowInfo()
         {
             return base.ShowInfo() + $"\nCourse: {Course}\nGroup: {Group}\nFaculty: {Faculty}\nUniversity: {University}";
