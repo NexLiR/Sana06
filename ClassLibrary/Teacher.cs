@@ -4,9 +4,54 @@ namespace ClassLibrary
 {
     public class Teacher : Person
     {
-        public string Situation { get; set; }
-        public string Department { get; set; }
-        public string HigherEducationInstitution { get; set; }
+        protected string _situation;
+        protected string _department;
+        protected string _higherEducationInstitution;
+        public string Situation
+        {
+            get 
+            { 
+                return _situation; 
+            }
+            set
+            {
+                if(value.Length < 0)
+                {
+                    throw new Exception("Situation cannot be empty");
+                }
+                else _situation = value; 
+            }
+        }
+        public string Department
+        {
+            get 
+            {
+                return _department;
+            }
+            set
+            {
+                if(value.Length < 0)
+                {
+                    throw new Exception("Department cannot be empty");
+                }
+                else _department = value;
+            }
+        }
+        public string HigherEducationInstitution
+        {
+            get
+            {
+                return _higherEducationInstitution;
+            }
+            set
+            {
+                if(value.Length < 0)
+                {
+                    throw new Exception("Higher education institution cannot be empty");
+                }
+                else _higherEducationInstitution = value;
+            }
+        }
 
         public Teacher() : base()
         {

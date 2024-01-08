@@ -46,11 +46,19 @@ namespace ClassLibrary
         }
         public void SetAverageScoreInEducationDocument(double avgScoreInEducationDocument)
         {
-            AverageScoreInEducationDocument = avgScoreInEducationDocument;
+            if (avgScoreInEducationDocument < 0 || avgScoreInEducationDocument > 12)
+            {
+                throw new Exception("Average score in education document can't be less than 0 or more than 12!");
+            }
+            else AverageScoreInEducationDocument = avgScoreInEducationDocument;
         }
         public void SetNameOfTheEducationalInstitution(string nameOfTheEducationalInstitution)
         {
-            NameOfTheFirstEducationalInstitution = nameOfTheEducationalInstitution;
+            if (nameOfTheEducationalInstitution.Length < 1 )
+            {
+                throw new Exception("Name of the educational institution can't be empty!");
+            }
+            else NameOfTheFirstEducationalInstitution = nameOfTheEducationalInstitution;
         }
         public override string ShowInfo()
         {

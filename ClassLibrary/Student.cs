@@ -4,10 +4,70 @@ namespace ClassLibrary
 {
     public class Student : Applicant
     {
-        protected byte Course { get; set; }
-        protected string Group { get; set; }
-        protected string Faculty { get; set; }
-        protected string University { get; set; }
+        protected byte _course;
+        protected string _group;
+        protected string _faculty;
+        protected string _university;
+        public byte Course
+        {
+            get
+            {
+                return _course;
+            }
+            set
+            {
+                if (value < 0 || value > 6)
+                {
+                    throw new Exception("Course must be in range from 1 to 6");
+                }
+                else _course = value;
+            }
+        }
+        public string Group
+        {
+            get
+            {
+                return _group;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("Group number must be higher than 0");
+                }
+                else _group = value;
+            }
+        }
+        public string Faculty
+        {
+            get
+            {
+                return _faculty;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("Faculty name can not be empty!");
+                }
+                else _faculty = value;
+            }
+        }
+        public string University
+        {
+            get
+            {
+                return _university;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("University name can not be empty!");
+                }
+                else _university = value;
+            }
+        }
 
         public Student() : base()
         {
